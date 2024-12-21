@@ -1,0 +1,11 @@
+{
+  "name": "building-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rt": "node __tests__/run.js "
+  },
+  "author": "",
+  "license": "ISC"
+}
