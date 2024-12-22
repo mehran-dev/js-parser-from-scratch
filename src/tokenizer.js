@@ -1,4 +1,6 @@
 const Spec = [
+  // semicolon
+  [/^;/, ";"],
   // white spaces
   [/^\s+/, null],
   //single line comments
