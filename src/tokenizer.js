@@ -1,5 +1,14 @@
 const Spec = [
+  // white spaces
+  [/^\s+/, null],
+  //single line comments
+  [/^\/\/.*/, null],
+  //multi line comments
+  [/^\/\*[\s\S]*?\*\//, null],
+
+  // number
   [/^\d+/, "NUMBER"],
+  // String
   [/^"[^"]*"/, "STRING"],
   [/^'[^']*'/, "STRING"],
 ];
@@ -24,6 +33,10 @@ class Tokenizer {
       const tokenValue = this._match(regexp, string);
       if (tokenValue == null) {
         continue;
+      }
+      if (tokenType == null) {
+        // for white spaces
+        return this.getNextToken();
       }
       return {
         type: tokenType,

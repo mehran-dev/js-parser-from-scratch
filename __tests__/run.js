@@ -2,7 +2,12 @@ const { Parser } = require("../src/parser.js");
 
 const parser = new Parser();
 
-const program = `'42'`;
+const program = `           42  //goaway
+/* 
+mmulti line comments 
+*/
+
+`;
 
 const ast = parser.parse(program);
 
