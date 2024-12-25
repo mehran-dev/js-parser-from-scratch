@@ -5,6 +5,7 @@ const parser = new Parser();
 const tests = [
   require("../__tests__/literal.js"),
   require("../__tests__/statement-list.js"),
+  require("../__tests__/block.js"),
 ];
 const assert = require("assert");
 function exec() {
