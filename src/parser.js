@@ -30,9 +30,15 @@ class Parser {
   }
 
   Statement() {
-    return this.ExpressionStatement();
+    switch (this._lookahead.type) {
+      case "{":
+        return this.BlockStatement();
+      default:
+        return this.ExpressionStatement();
+    }
   }
 
+  BlockStatement() {}
   ExpressionStatement() {
     const expression = this.Expression();
     this._eat(";");

@@ -2,7 +2,10 @@ const { Parser } = require("../src/parser.js");
 
 const parser = new Parser();
 
-const tests = [require("../__tests__/literal.js")];
+const tests = [
+  require("../__tests__/literal.js"),
+  require("../__tests__/statement-list.js"),
+];
 const assert = require("assert");
 function exec() {
   const program = `           42;  //goaway
