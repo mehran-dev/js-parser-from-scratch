@@ -6,6 +6,7 @@ const tests = [
   require("../__tests__/literal.js"),
   require("../__tests__/statement-list.js"),
   require("../__tests__/block.js"),
+  require("../__tests__/empty-statement.js"),
 ];
 const assert = require("assert");
 function exec() {

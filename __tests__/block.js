@@ -51,7 +51,9 @@ module.exports = (test) => {
     `
         {
         45;
-        "hello";
+        {
+          "hello";
+          }
         }
         `,
     {
@@ -68,11 +70,16 @@ module.exports = (test) => {
               },
             },
             {
-              type: "ExpressionStatement",
-              expression: {
-                type: "StringLiteral",
-                value: "hello",
-              },
+              type: "BlockStatement",
+              body: [
+                {
+                  type: "ExpressionStatement",
+                  expression: {
+                    type: "StringLiteral",
+                    value: "hello",
+                  },
+                },
+              ],
             },
           ],
         },

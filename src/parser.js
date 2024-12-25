@@ -31,6 +31,8 @@ class Parser {
 
   Statement() {
     switch (this._lookahead.type) {
+      case ";":
+        return this.EmptyStatement();
       case "{":
         return this.BlockStatement();
       default:
@@ -38,6 +40,12 @@ class Parser {
     }
   }
 
+  EmptyStatement() {
+    this._eat(";");
+    return {
+      type: "EmptyStatement",
+    };
+  }
   BlockStatement() {
     this._eat("{");
     const body = this._lookahead.type !== "}" ? this.StatementList("}") : [];
